@@ -11,10 +11,11 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Konfigurasi</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a routerLink="about">Informasi</a></li>
-        <li><a href="#">Keluar</a></li>
+        <li *ngIf="authService.isLogin()"><a href="#">Konfigurasi</a></li>
+        <li *ngIf="authService.isLogin()"><a href="#">Profil</a></li>
+        <li *ngIf="authService.isLogin()"><a routerLink="about">Informasi</a></li>
+        <li *ngIf="authService.isLogin()"><a (click)="logout()">Keluar</a></li>
+        <li *ngIf="!authService.isLogin()"><a routerLink="login">Login</a></li>
       </ul>
       <form class="navbar-form navbar-right">
         <input type="text" class="form-control" placeholder="Cari...">
