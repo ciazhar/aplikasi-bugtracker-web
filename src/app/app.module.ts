@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { ProjectModule } from './project/project.module';
 
 import { AuthService } from './shared/auth.service';
 import { AuthGuard } from './shared/authguard';
@@ -15,9 +16,10 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './shared/login/login.component';
 
 const routingAplikasi : Routes = [
-  { path: "login", component: LoginComponent},
+  { path : "login", component: LoginComponent},
   { path : "welcome", component : WelcomeComponent },
-  { path : "about", component : AboutComponent }
+  { path : "about", component : AboutComponent },
+  { path : "project", redirectTo: "/project", pathMatch: "full", canActivateChild : [AuthGuard]},
 ]
 
 @NgModule({
@@ -33,6 +35,7 @@ const routingAplikasi : Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ProjectModule,
     RouterModule.forRoot(routingAplikasi)
   ],
   providers: [AuthGuard, AuthService],
