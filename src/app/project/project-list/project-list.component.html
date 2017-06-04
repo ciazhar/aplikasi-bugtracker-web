@@ -1,4 +1,24 @@
 <h1>Project List</h1>
 
+<div *ngIf="projectList">
+<table class="table table-condensed table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Nama Project</th>
+			<th>Current Version</th>
+			<th>Status</th>
+			<th>Project Manager</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let project of projectList">
+			<td>{{project.project}}</td>
+			<td>{{project.currentVersion}}</td>
+      <td>{{project.keterangan}}</td>
+			<td>{{project.projectManager}}</td>
+		</tr>
+	</tbody>
+</table>
+
 <button type="button" class="btn btn-primary" routerLink="/project/create-new-project">Create New Project</button>
 <button type="button" class="btn btn-primary" routerLink="/project/project-detail">Project Details</button>

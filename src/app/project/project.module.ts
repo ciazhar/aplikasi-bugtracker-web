@@ -7,6 +7,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
 
 import { AuthGuard } from '../shared/authguard';
+import { ProjectService } from './project.service';
 
 
 const routingProject : Routes = [
@@ -22,7 +23,7 @@ const routingProject : Routes = [
   ],
   declarations: [ProjectListComponent, ProjectDetailComponent, CreateNewProjectComponent],
   providers :[
-    AuthGuard
+    AuthGuard, ProjectService
   ]
 
 })
