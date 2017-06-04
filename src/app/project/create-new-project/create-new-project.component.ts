@@ -11,7 +11,7 @@ import { Project } from '../project.model';
 })
 export class CreateNewProjectComponent implements OnInit {
 
-  project : Project = new Project("ass","ads","adsa","ads","adsa");
+  project : Project = new Project("","","","","");
 
   constructor(private projectService : ProjectService) { }
 
