@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Project } from './project.model';
 
 @Injectable()
 export class ProjectService {
@@ -11,6 +12,10 @@ export class ProjectService {
       {name: "A-002", currentVersion: "v0.0.0.2", status: "belum rilis", projectManager: "PM-002"}
     ];
     return Promise.resolve(projectList);
+  }
+
+  save(project : Project) : Promise<string>{
+    return Promise.resolve("success");
   }
 
 }

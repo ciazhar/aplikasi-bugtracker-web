@@ -18,4 +18,11 @@ export class CreateNewProjectComponent implements OnInit {
   ngOnInit() {
   }
 
+  save(){
+    this.projectService.save(this.project)
+    .then(hasi => {
+      this.project = new Project("","","","","");
+    });
+  }
+
 }
